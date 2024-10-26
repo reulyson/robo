@@ -1,60 +1,70 @@
-# robo
-teste do motor de robo sumo com a funcionalidade dos movimentos mecanismo e sensorial
-:Author: reulyson
-:Email: {AuthorEmail}
-:Date: 29/05/2020
-:Revision: version#
-:License: Public Domain
+# Braço Robótico - Projeto de Controle de Movimentos e Sensores
 
-= Project: {Project}
+### Autor: Reulyson  
+**Data**: 29/05/2020  
+**Licença**: Domínio Público  
 
-Describe your project
+## Descrição do Projeto
 
-== Step 1: Installation
-Please describe the steps to install this project.
+Este projeto consiste em um braço robótico com funcionalidades de controle de movimento usando motores e sensores. Ele é projetado para realizar movimentos automáticos, controlando o ângulo de suas articulações com base nos sinais recebidos dos sensores.
 
-For example:
+## Componentes Principais
 
-1. Open this file
-2. Edit as you like
-3. Release to the World!
+- **Sensores de Fim de Curso**: Sensores usados para detectar quando o braço atinge um limite de movimento em cada articulação.
+- **Motores**: Controlados por uma ponte H, os motores movem as articulações do braço robótico.
+- **Botão de Start**: Um botão físico para iniciar a operação do braço.
 
-== Step 2: Assemble the circuit
+## Instruções de Instalação
 
-Assemble the circuit following the diagram layout.png attached to the sketch
+### Passo 1: Montagem do Circuito
 
-== Step 3: Load the code
+Monte o circuito de acordo com o diagrama `layout.png` incluído no projeto. Conecte os sensores, motores e o botão de start corretamente nos pinos designados.
 
-Upload the code contained in this sketch on to your board
+### Passo 2: Carregamento do Código
 
-=== Folder structure
+1. Abra o arquivo `robo.ino` ou `teste.ino` no Arduino IDE.
+2. Conecte sua placa Arduino ao computador.
+3. Compile e faça o upload do código para a placa.
 
-....
- sketch123                => Arduino sketch folder
-  ├── sketch123.ino       => main Arduino file
-  ├── schematics.png      => (optional) an image of the required schematics
-  ├── layout.png          => (optional) an image of the layout
-  └── ReadMe.adoc         => this file
-....
+### Passo 3: Inicialização do Braço
 
-=== License
-This project is released under a {License} License.
+1. Pressione o botão de start para iniciar a operação.
+2. O braço robótico começará a mover-se automaticamente de acordo com os sinais recebidos dos sensores.
+3. Dependendo da posição detectada pelos sensores, o braço realizará diferentes movimentos.
 
-=== Contributing
-To contribute to this project please contact reulyson https://id.arduino.cc/reulyson
+## Estrutura de Pastas
 
-=== BOM
-Add the bill of the materials you need for this project.
+- **robo.ino**: Código principal que controla o braço robótico.
+- **teste.ino**: Código de teste para verificar o funcionamento dos motores e sensores.
+- **README.md**: Este arquivo de documentação.
 
-|===
-| ID | Part name      | Part number | Quantity
-| R1 | 10k Resistor   | 1234-abcd   | 10
-| L1 | Red LED        | 2345-asdf   | 5
-| A1 | Arduino Zero   | ABX00066    | 1
-|===
+## Como Funciona
 
+- **Movimento para Frente**: Quando todos os sensores detectam uma condição normal, o braço se move para frente.
+- **Movimento de Recuo**: Caso os sensores detectem uma barreira ou linha, o braço entra em modo de recuo, movendo-se para trás por um tempo determinado.
+- **Movimento de Girar**: Após o recuo, o braço executa uma manobra de giro para reposicionar suas articulações.
 
-=== Help
-This document is written in the _AsciiDoc_ format, a markup language to describe documents.
-If you need help you can search the http://www.methods.co.nz/asciidoc[AsciiDoc homepage]
-or consult the http://powerman.name/doc/asciidoc[AsciiDoc cheatsheet]
+## Materiais Necessários (BOM)
+
+| ID  | Componente           | Código     | Quantidade |
+|-----|----------------------|------------|------------|
+| R1  | Resistor de 10k       | 1234-abcd  | 1          |
+| L1  | LED Vermelho          | 2345-asdf  | 1          |
+| A1  | Arduino Uno           | ABX00066   | 1          |
+| M1  | Motor DC              | 9876-zyxw  | 2          |
+| H1  | Ponte H L298N         | 4567-ghij  | 1          |
+| S1  | Sensor de Fim de Curso| 3456-uvwx  | 2          |
+| S2  | Sensor de Fim de Curso| 8765-lmno  | 2          |
+| B1  | Botão de Start        | 7654-qwer  | 1          |
+
+## Contribuições
+
+Para contribuir com este projeto, entre em contato com Reulyson no link: [Perfil Arduino](https://id.arduino.cc/reulyson).
+
+## Licença
+
+Este projeto está licenciado sob Domínio Público.
+
+## Ajuda
+
+Este documento foi escrito em formato Markdown. Caso precise de ajuda para editar ou melhorar o documento, consulte a [documentação do Markdown](https://www.markdownguide.org/).
